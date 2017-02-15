@@ -1,15 +1,17 @@
 package com.model;
 
 public class User {
-
-	private Integer UserId;
-	private String UserName;
-	private String UserPassword;
-	private Integer SexId;
-	public Integer getUserId() {
+	private int UserId;
+	private String UserName ;
+	private String UserPassword ;
+	private String UserMail ;
+	private String UserRealName ;
+	private Sex Sex;
+	private String UserFlag ;
+	public int getUserId() {
 		return UserId;
 	}
-	public void setUserId(Integer userId) {
+	public void setUserId(int userId) {
 		UserId = userId;
 	}
 	public String getUserName() {
@@ -24,15 +26,35 @@ public class User {
 	public void setUserPassword(String userPassword) {
 		UserPassword = userPassword;
 	}
-	public Integer getSexId() {
-		return SexId;
+	public String getUserMail() {
+		return UserMail;
 	}
-	public void setSexId(Integer sexId) {
-		SexId = sexId;
+	public void setUserMail(String userMail) {
+		UserMail = userMail;
+	}
+	public String getUserRealName() {
+		return UserRealName;
+	}
+	public void setUserRealName(String userRealName) {
+		UserRealName = userRealName;
+	}
+	public Sex getSex() {
+		return Sex;
+	}
+	public void setSex(Sex sex) {
+		Sex = sex;
+	}
+	public String getUserFlag() {
+		return UserFlag;
+	}
+	public void setUserFlag(String userFlag) {
+		UserFlag = userFlag;
 	}
 	@Override
 	public String toString() {
-		return "User [UserId=" + UserId + ", UserName=" + UserName + ", UserPassword=" + UserPassword + ", SexId="
-				+ SexId + "]";
+		return "User [UserId=" + UserId + ", UserName=" + UserName + ", UserPassword=" + UserPassword + ", UserMail="
+				+ UserMail + ", UserRealName=" + UserRealName + ", Sex=" + Sex + ", UserFlag=" + UserFlag + "]";
 	}
+	
+	
 }

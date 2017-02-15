@@ -1,19 +1,13 @@
 package com.model;
 
-import java.io.Serializable;
+public class Sex {
 
-public class Sex implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6388409903697797504L;
-	private Integer SexId;
+	private int SexId;
 	private String SexType;
-	public Integer getSexId() {
+	public int getSexId() {
 		return SexId;
 	}
-	public void setSexId(Integer sexId) {
+	public void setSexId(int sexId) {
 		SexId = sexId;
 	}
 	public String getSexType() {
@@ -26,5 +20,6 @@ public class Sex implements Serializable{
 	public String toString() {
 		return "Sex [SexId=" + SexId + ", SexType=" + SexType + "]";
 	}
+	
 	
 }
