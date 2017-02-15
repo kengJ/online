@@ -1,10 +1,10 @@
-create table sex(
+create table Sex(
 	SexId int auto_increment,
 	SexType char(5) not null,
 	primary key(Sexid)
 )engine=InnoDB auto_increment=54 default charset=utf8;
 
-create table user(
+create table User(
 	UserId int auto_increment,
 	UserName char(12) not null,
 	UserPassword char(16) not null,
@@ -13,7 +13,7 @@ create table user(
 	SexId int not null,
 	UserFlag char(10) not null,
 	primary key (UserId),
-	constraint user_sex foreign key (SexId) references sex (SexId) on delete cascade on update cascade
+	constraint user_sex foreign key (SexId) references Sex (SexId) on delete cascade on update cascade
 )engine=InnoDB auto_increment=54 default charset=utf8;
 
 create table UserInfo(
@@ -24,7 +24,7 @@ create table UserInfo(
 	UserInfoSendDate date not null,
 	UserId int not null,
 	primary key (UserInfoId),
-	constraint userinfo_user foreign key (UserId) references user (UserId) on delete cascade on update cascade
+	constraint userinfo_user foreign key (UserId) references User (UserId) on delete cascade on update cascade
 )engine=InnoDB auto_increment=54 default charset=utf8;
 
 create table Menu(
@@ -35,7 +35,7 @@ create table Menu(
 	primary key (MenuId)
 )engine=InnoDB auto_increment=54 default charset=utf8;
 
-create table orders(
+create table Orders(
 	OrdersId int auto_increment,
 	OrdersNum int not null,
 	OrdersNotice char(200),
