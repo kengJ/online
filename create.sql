@@ -1,67 +1,67 @@
 create table sex(
-	SexId int notnull auto_increment,
-	SexType char(5) notnull,
+	SexId int auto_increment,
+	SexType char(5) not null,
 	primary key(Sexid)
-)engine=InnoDB auto_increment=54 default charset=utf-8
+)engine=InnoDB auto_increment=54 default charset=utf8;
 
 create table user(
-	UserId int notnull auto_increment,
-	UserName char(12) notnull,
-	UserPassword char(16) notnull,
-	UserMail char(50) notnull,
-	UserRealName char(16) notnull,
-	SexId int notnull,
-	UserFlag char(10) notnull,
+	UserId int auto_increment,
+	UserName char(12) not null,
+	UserPassword char(16) not null,
+	UserMail char(50) not null,
+	UserRealName char(16) not null,
+	SexId int not null,
+	UserFlag char(10) not null,
 	primary key (UserId),
-	constraint 'user_sex' foreign key ('SexId') references 'sex' ('SexId') on delete cascade on update cascade
-)engine=InnoDB auto_increment=54 delete charset=utf-8
+	constraint user_sex foreign key (SexId) references sex (SexId) on delete cascade on update cascade
+)engine=InnoDB auto_increment=54 default charset=utf8;
 
 create table UserInfo(
-	UserInfoId int notnull auto_increment,
-	UserInfoAddress char(100) notnull,
-	UserInfoTel char(20) notnull,
-	UserInfoMovPhone char(20) notnull,
-	UserInfoSendDate date notnull,
-	UserId int notnull,
+	UserInfoId int auto_increment,
+	UserInfoAddress char(100) not null,
+	UserInfoTel char(20) not null,
+	UserInfoMovPhone char(20) not null,
+	UserInfoSendDate date not null,
+	UserId int not null,
 	primary key (UserInfoId),
-	constraint 'userinfo_user' foreign key ('UserId') references 'user' ('UserId') on delete cascade on update cascade
-)engine=InnoDB auto_increment=54 delete charset=utf-8
+	constraint userinfo_user foreign key (UserId) references user (UserId) on delete cascade on update cascade
+)engine=InnoDB auto_increment=54 default charset=utf8;
 
 create table Menu(
-	MenuId int notnull auto_increment,
-	MenuName char(100) notnull,
-	MenuContent char(300) ,
-	MenuPrice decimal(6,2) notnull, 
+	MenuId int auto_increment,
+	MenuName char(100) not null,
+	MenuContent char(200) ,
+	MenuPrice decimal(6,2) not null, 
 	primary key (MenuId)
-)engine=InnoDB auto_increment=54 delete charset=utf-8
+)engine=InnoDB auto_increment=54 default charset=utf8;
 
-create table Orders(
-	OrdersId int notnull auto_increment,
-	OrdersNum int notnull,
-	OrdersNotice char(300),
-	MenuId int notnull,
-	UserId int notnull,
-	OrdersStatus int notnull,
-	OrdersDate date notnull,
+create table orders(
+	OrdersId int auto_increment,
+	OrdersNum int not null,
+	OrdersNotice char(200),
+	MenuId int not null,
+	UserId int not null,
+	OrdersStatus int not null,
+	OrdersDate date not null,
 	primary key(OrdersId),
-	constraint 'orders_menu' foreign key('MenuId') references 'Menu'('MenuId') on delete set null on update no action,
-	constraint 'orders_user' foreign key('UserId') references 'User'('UserId') on delete cascade on update cascade
-)engine=InnoDB auto_increment=54 delete charset=utf-8
+	constraint orders_menu foreign key(MenuId) references Menu(MenuId) ,
+	constraint orders_user foreign key(UserId) references User(UserId) 
+)engine=InnoDB auto_increment=54 default charset=utf8;
 
 create table MenuList(
-	MenuListId int notnull auto_increment,
-	MenuListName char(50) notnull,
-	MenuListCount int notnull,
-	MenuListPrice decimal(6,2) notnull,
-	MenuListTotal decimal(10,2) notnull,
-	MenuListContent char(300) ,
-	OrdersId int notnull,
-	UserId int notnull,
-	MenuListSendName char(50) notnull,
-	MenuListSendTel char(20) notnull,
-	MenuListSendTime date notnull,
-	MenuListState int notnull,
+	MenuListId int  auto_increment,
+	MenuListName char(50) not null,
+	MenuListCount int not null,
+	MenuListPrice decimal(6,2) not null,
+	MenuListTotal decimal(10,2) not null,
+	MenuListContent char(200) ,
+	OrdersId int not null,
+	UserId int not null,
+	MenuListSendName char(50) not null,
+	MenuListSendTel char(20) not null,
+	MenuListSendTime date not null,
+	MenuListState int not null,
 	primary key(MenuListId),
-	constraint "menulist_order" foreign key('OrdersId') references 'Orders'('OrdersId') on delete cascade on update cascade,
-	constraint "menulist_user" foreign key('UserId') references 'User'('UserId') on delete cascade on update cascade
-)engine=InnoDB auto_increment=54 delete charset=utf-8
+	constraint menulist_order foreign key(OrdersId) references Orders(OrdersId) on delete cascade on update cascade,
+	constraint menulist_user foreign key(UserId) references User(UserId) on delete cascade on update cascade
+)engine=InnoDB auto_increment=54 default charset=utf8;
