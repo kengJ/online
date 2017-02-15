@@ -1,20 +1,24 @@
 package com.model;
 
 import java.util.Date;
-
+/**
+ * 菜单列表类
+ * @author heyanzhu
+ *
+ */
 public class MenuList {
 	private int MenuListId ;
-	private String MenuListName ;
-	private int MenuListCount ;
-	private double MenuListPrice ;
-	private double MenuListTotal ;
-	private String MenuListContent ;
-	private Orders orders;
-	private User user;
-	private String MenuListSendName ;
-	private String MenuListSendTel ;
-	private Date MenuListSendTime ;
-	private int MenuListState ;
+	private String MenuListName ;//菜单列表名
+	private int MenuListCount ;//数量
+	private double MenuListPrice ;//价格
+	private double MenuListTotal ;//总价
+	private String MenuListContent ;//备注
+	private Orders orders;//订单类
+	private User user;//用户
+	private String MenuListSendName ;//下单人
+	private String MenuListSendTel ;//下单电话
+	private Date MenuListSendTime ;//下单时间
+	private int MenuListState ;//状态
 	public int getMenuListId() {
 		return MenuListId;
 	}

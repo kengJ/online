@@ -1,9 +1,13 @@
 package com.model;
-
+/**
+ * 性别类
+ * @author heyanzhu
+ *
+ */
 public class Sex {
 
 	private int SexId;
-	private String SexType;
+	private String SexType;//性别类型
 	public int getSexId() {
 		return SexId;
 	}

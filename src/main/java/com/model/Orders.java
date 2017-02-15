@@ -1,15 +1,19 @@
 package com.model;
 
 import java.util.Date;
-
+/**
+ * 订单类
+ * @author heyanzhu
+ *
+ */
 public class Orders {
 	private int OrdersId ;
-	private int OrdersNum ;
-	private String OrdersNotice ;
-	private Menu menu;
-	private User user;
-	private int OrdersStatus ;
-	private Date OrdersDate;
+	private int OrdersNum ;//订单名称
+	private String OrdersNotice ;//备注
+	private Menu menu;//菜单
+	private User user;//用户
+	private int OrdersStatus ;//订单状态
+	private Date OrdersDate;//下单日期
 	public int getOrdersId() {
 		return OrdersId;
 	}

@@ -1,14 +1,18 @@
 package com.model;
 
 import java.util.Date;
-
+/**
+ * 用户信息类
+ * @author heyanzhu
+ *
+ */
 public class UserInfo {
 	private int UserInfoId ;
-	private String UserInfoAddress ;
-	private String UserInfoTel ;
-	private String UserInfoMovPhone ;
-	private Date UserInfoSendDate ;
-	private User user;
+	private String UserInfoAddress ;//地址
+	private String UserInfoTel ;//电话
+	private String UserInfoMovPhone ;//手机
+	private Date UserInfoSendDate ;//发送日期
+	private User user;//用户信息
 	public int getUserInfoId() {
 		return UserInfoId;
 	}

@@ -1,13 +1,17 @@
 package com.model;
 
+/**
+ * 用户信息类
+ * @author heyanzhu
+ */
 public class User {
 	private int UserId;
-	private String UserName ;
-	private String UserPassword ;
-	private String UserMail ;
-	private String UserRealName ;
-	private Sex Sex;
-	private String UserFlag ;
+	private String UserName ;//用户名
+	private String UserPassword ;//密码
+	private String UserMail ;//邮件地址
+	private String UserRealName ;//昵称
+	private Sex Sex;//性别
+	private String UserFlag ;//用户状态
 	public int getUserId() {
 		return UserId;
 	}
